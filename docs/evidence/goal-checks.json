@@ -1,0 +1,8 @@
+{
+  "scenario_checks": "passed",
+  "leads_verified": 3,
+  "tool_calls": 9,
+  "input_tokens_sum": 13402,
+  "output_tokens_sum": 295,
+  "external_messages_sent": 0
+}

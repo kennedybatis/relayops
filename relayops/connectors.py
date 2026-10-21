@@ -18,7 +18,7 @@ class GoogleSheets:
         url = self.base + quote(range_name, safe='')
         headers = {'Authorization': 'Bearer ' + self.token, 'Content-Type': 'application/json'}
         if body is None:
-            return self.transport(Request(url, headers=headers))
+            return self.transport(Request(url + '?valueRenderOption=UNFORMATTED_VALUE', headers=headers))
         return self.transport(Request(url + '?valueInputOption=RAW', data=json.dumps({'values': body}).encode(), headers=headers, method='PUT'))
     def export_summary(self, results):
         values = [['lead_id', 'status', 'reason', 'input_hash']]

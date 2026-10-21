@@ -39,6 +39,14 @@ python3 -m relayops report
 
 Para uma demonstração isolada, use `python3 -m relayops --db runtime/segunda-demo.db serve`. O banco é criado quando necessário. O servidor escuta somente no loopback.
 
+## Novo: agente orientado por objetivo
+
+Além da demo offline, há um loop com modelo local que lê uma planilha, interpreta mensagens, escolhe ferramentas permitidas, registra avaliações e confere cada gravação antes de concluir. O processo inclui um caso de orçamento conflitante e um texto tentando alterar as instruções do agente.
+
+**Validado em execução real:** três revisões gravadas e conferidas no Google Sheets, com modelo local, 9 ações de ferramenta e 41 testes automatizados. Veja o [registro e as limitações da validação](docs/evidence.md).
+
+Veja [execução com Ollama e Google Sheets](docs/goal-agent.md). O pacote inclui uma planilha sintética pronta para importação, execução direta com OAuth e uma ponte explícita para conectores autenticados no anfitrião.
+
 ## O que está implementado
 
 | Etapa | Evidência observável |
@@ -51,9 +59,9 @@ Para uma demonstração isolada, use `python3 -m relayops --db runtime/segunda-d
 | Operação | Painel local, CLI, persistência SQLite, reinício sem duplicar ações |
 | Skills | Procedimentos de negócio, perfil e referências sob demanda |
 | Integrações | Adaptador Sheets com RAW e leitura de conferência; MCP stdio opcional |
-| LLM | Advisor Ollama opcional, resposta validada e sem acesso a ferramentas |
+| LLM | Advisor consultivo e operador por objetivo com ferramentas de revisão limitadas |
 
-**A demo padrão é determinística e não chama um LLM.** Isso permite testar o contrato de execução sem chaves nem custo de API. O modelo opcional resume contexto e sugere perguntas; nunca altera permissões ou a classificação oficial. Não é um framework de agente autônomo de propósito geral.
+**A demo padrão é determinística e não chama um LLM.** Isso permite testar o contrato de execução sem chaves nem custo de API. O advisor opcional resume contexto sem ferramentas. No novo modo conectado, o operador LLM escolhe ações de revisão dentro das permissões verificadas pelo runtime. Ambos mantêm o escopo comercial limitado.
 
 ## Seis cenários de validação
 

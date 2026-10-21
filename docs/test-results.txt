@@ -1,3 +1,22 @@
+test_bridge_timeout_does_not_infer_success (test_agent.AgentTests) ... ok
+test_budget_amount_parser_is_conservative (test_agent.AgentTests) ... ok
+test_cannot_write_before_reading (test_agent.AgentTests) ... ok
+test_canonical_summary_uses_source_not_model_invention (test_agent.AgentTests) ... ok
+test_changed_source_stops_write (test_agent.AgentTests) ... ok
+test_conflict_flag_and_verified_write (test_agent.AgentTests) ... ok
+test_fabricated_budget_evidence_is_rejected (test_agent.AgentTests) ... ok
+test_fabricated_message_evidence_is_rejected (test_agent.AgentTests) ... ok
+test_finish_rechecks_previous_verification (test_agent.AgentTests) ... ok
+test_loop_limits_incomplete_execution (test_agent.AgentTests) ... ok
+test_model_cannot_approve_send_or_delete (test_agent.AgentTests) ... ok
+test_network_failure_is_not_retried (test_agent.AgentTests) ... ok
+test_no_consent_overrides_model_flag (test_agent.AgentTests) ... ok
+test_occupied_output_is_preserved (test_agent.AgentTests) ... ok
+test_planner_structured_allowed_actions (test_agent.AgentTests) ... ok
+test_quoted_budget_overrides_missed_model_conflict (test_agent.AgentTests) ... ok
+test_readback_mismatch_prevents_completion (test_agent.AgentTests) ... ok
+test_source_budget_ambiguity_survives_wrong_model_quote (test_agent.AgentTests) ... ok
+test_template_assessment_is_rejected_before_write (test_agent.AgentTests) ... ok
 test_advisor_never_exposes_tools (test_engine.ConnectorTests) ... ok
 test_advisor_rejects_arbitrary_action (test_engine.ConnectorTests) ... ok
 test_advisor_rejects_remote_endpoint (test_engine.ConnectorTests) ... ok
@@ -22,6 +41,6 @@ test_invalid_json_does_not_write (test_http.HTTPTests) ... ok
 test_local_workflow (test_http.HTTPTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.298s
+Ran 41 tests in 0.491s
 
 OK

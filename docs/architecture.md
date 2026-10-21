@@ -22,3 +22,9 @@ O evento guarda hash do resultado, evitando replicar conteúdo do contato na tri
 ## Autonomia
 
 O modelo local é consultivo. A classificação e as ações têm regras determinísticas. Há validação de JSON para resumo e perguntas, não uma garantia de que um LLM nunca reproduzirá conteúdo malicioso. Como não recebe ferramentas, esse conteúdo não executa ações. A CLI de decisão é uma interface confiável do operador, não uma API autorizada para o agente.
+
+## Goal-driven connected mode
+
+`OllamaPlanner` selects one schema-constrained action. `WorkspaceTools` exposes only stage-valid capabilities, validates source freshness, limits writes to AgentReview rows and requires read-back before finish. The operator may use direct Google OAuth or a trusted connected-tool host via explicit file IPC. The core demo and connected review share campaign rules but have distinct persistence: SQLite for the offline workflow, Sheets plus JSONL for the connected review.
+
+The optional advisor remains tool-free; the connected operator can write reviews, not send messages or approve actions. A conflict is a model assessment requiring human clarification, not permission to overwrite source data.

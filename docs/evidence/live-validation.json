@@ -1,0 +1,17 @@
+{
+  "scenario_checks": "passed",
+  "leads_verified": 3,
+  "tool_calls": 9,
+  "input_tokens_sum": 13402,
+  "output_tokens_sum": 295,
+  "external_messages_sent": 0,
+  "model": "qwen3:0.6b",
+  "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+  "model_calls": 12,
+  "transport": "authenticated Google Drive connector via documented host bridge",
+  "transport_operations": 23,
+  "sheets_writes": 3,
+  "dataset": "synthetic",
+  "trace_sha256": "6114e6bdd2a2021d31f31e5bf7943a1ea713b1b68678434690d9ba2ee647b829",
+  "scope": "Operational outcomes and source-grounded summaries; not model accuracy benchmark"
+}
