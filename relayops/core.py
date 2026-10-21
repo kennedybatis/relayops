@@ -90,8 +90,15 @@ class Engine:
                       'approval_id': None, 'replay': False, 'mode': 'deterministic', 'model_tokens': 0,
                       'provider_cost_usd': 0, 'elapsed_ms': round((time.perf_counter() - started) * 1000, 3)}
             if assessment['status'] in ('sales_ready', 'needs_information', 'nurture'):
-                payload = {'lead_id': lead.id, 'to': lead.email,
-                           'body': 'Olá! Podemos confirmar seu orçamento e prazo para indicar o próximo passo?'}
+                if assessment['status'] == 'sales_ready':
+                    message = 'Seu orçamento e prazo estão dentro do escopo da campanha. Podemos agendar uma conversa com a equipe comercial?'
+                elif assessment['status'] == 'needs_information':
+                    fields = {'budget': 'orçamento', 'horizon_days': 'prazo de compra'}
+                    missing = ' e '.join(fields[k] for k in assessment['missing'])
+                    message = 'Para orientar o atendimento, você pode informar seu ' + missing + '?'
+                else:
+                    message = 'Seu momento de compra difere dos critérios desta campanha. Podemos conversar sobre o melhor momento para retomar o atendimento?'
+                payload = {'lead_id': lead.id, 'to': lead.email, 'body': message}
                 approval_id = digest(payload)[:24]
                 self.db.execute('INSERT INTO approvals VALUES(?,?,?)', (approval_id, json.dumps(payload, ensure_ascii=False), 'pending'))
                 result['approval_id'] = approval_id

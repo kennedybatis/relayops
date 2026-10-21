@@ -4,7 +4,7 @@ Validação local em 21/10/2026. Dados exclusivamente sintéticos.
 
 | Componente | Resultado | Alcance |
 |---|---|---|
-| Núcleo e adaptadores | 16 testes passaram | Regras, limites, identidade, persistência, aprovação e contratos |
+| Núcleo e adaptadores | 17 testes passaram | Regras, limites, identidade, persistência, aprovação e contratos |
 | HTTP local | 5 testes passaram | Fluxo completo, Host, Origin, JSON inválido e rotas |
 | MCP | Sessão stdio real passou | initialize, list_tools, chamada de qualificação e inspeção |
 | Skills | Duas skills validadas | Frontmatter, nomes e referências |

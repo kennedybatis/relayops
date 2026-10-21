@@ -22,6 +22,13 @@ class EngineTests(unittest.TestCase):
         self.assertEqual(state['outbox_count'], 0)
         self.assertEqual(len(state['approvals']), 4)
         self.assertTrue(state['audit_valid'])
+    def test_draft_matches_missing_information(self):
+        result = self.engine.process(self.rows[1])
+        payload = self.engine.snapshot()['approvals'][0]['payload']
+        self.assertIn('orçamento', payload['body'])
+        self.assertNotIn('prazo de compra', payload['body'])
+        self.assertEqual(payload['to'], self.rows[1]['email'])
+        self.assertEqual(self.engine.snapshot()['outbox_count'], 0)
     def test_idempotency_after_restart(self):
         first = self.engine.process(self.rows[0])
         self.engine.close()

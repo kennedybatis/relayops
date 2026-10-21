@@ -55,7 +55,7 @@ Para uma demonstração isolada, use `python3 -m relayops --db runtime/segunda-d
 
 **A demo padrão é determinística e não chama um LLM.** Isso permite testar o contrato de execução sem chaves nem custo de API. O modelo opcional resume contexto e sugere perguntas; nunca altera permissões ou a classificação oficial. Não é um framework de agente autônomo de propósito geral.
 
-## Seis cenários, sem maquiagem
+## Seis cenários de validação
 
 | Entrada sintética | Resultado esperado |
 |---|---|
@@ -127,7 +127,7 @@ O advisor envia o lead sintético para o endpoint local `/api/chat`. Carrega per
 
 ## Transparência de construção
 
-Kennedy definiu a intenção de negócio e o contexto comercial; o código, os testes e a documentação deste demonstrador foram produzidos com assistência do Codex. Este repositório não comprova sozinho domínio pessoal de cada componente. O autor deve conseguir explicar e operar a solução durante a avaliação. Não atribuímos resultados reais de clientes ou tempo de produção a este projeto.
+Kennedy definiu a intenção de negócio e o contexto comercial; o código, os testes e a documentação deste demonstrador foram produzidos com assistência do Codex. O roteiro de apresentação acompanha as decisões técnicas e a validação do fluxo. Não atribuímos resultados reais de clientes ou tempo de produção a este projeto.
 
 **Status:** referência demonstrável, local e de usuário único. Para produção faltam autenticação/RBAC, segregação por cliente, gestão de segredos, política de retenção, operação de credenciais, telemetria e validação com usuários reais. Não há SLA, certificação, vínculo com UPX nem promessa de retorno.
 
