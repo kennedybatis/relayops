@@ -21,3 +21,9 @@ See [architecture](architecture.md), [operational handoff](handoff.md), [decisio
 ## Goal-driven review
 
 A second mode uses a real local Ollama model to choose bounded review tools against a Google Sheets sandbox. It interprets messages, flags conflicts, writes assessments and verifies each row. Direct OAuth and an explicitly documented connected-host bridge are supported. See [goal-driven agent](goal-agent.md) for setup, contracts and limitations.
+
+## Where I plan to take RelayOps
+
+I built RelayOps as an evolving foundation for business-process agents, starting with commercial workflows where I can connect my business experience to qualification rules, approval points and verifiable actions. Local-model execution with Google Sheets has been validated, and the project also includes a bounded MCP stdio server.
+
+My next steps are to map each client's process with the area owner, define autonomy boundaries and add CRM and other system integrations through MCP or APIs. I plan to validate each connector with a real task, develop reusable skills, document the handoff and train the team. Execution quality, adoption and cost per task would guide further improvements. These integrations and customer operations are planned work, separate from the flow already validated here.

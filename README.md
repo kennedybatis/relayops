@@ -141,6 +141,14 @@ Usei o Codex na implementação do código, na construção dos testes e na docu
 
 Na validação com Ollama e Google Sheets, o agente revisou três leads, registrou as avaliações e conferiu cada gravação. Incluí um orçamento conflitante e uma tentativa de alterar as instruções pelo conteúdo do lead para testar os limites do fluxo. Os resultados e as limitações observadas estão nas [evidências](docs/evidence.md).
 
+## Como pretendo evoluir o RelayOps
+
+Construí o RelayOps como uma base evolutiva para agentes aplicados a processos de negócio. Comecei pelo comercial, onde minha experiência ajuda a traduzir a rotina da equipe em critérios de qualificação, pontos de aprovação e ações verificáveis. Já validei a execução com modelo local e Google Sheets; o projeto também inclui um servidor MCP stdio com ferramentas delimitadas.
+
+Minha proposta de evolução parte do processo do cliente: mapear a operação com o responsável da área, definir o escopo e o teto de autonomia do agente e conectar as ferramentas necessárias via MCP ou APIs. A partir dessa base, pretendo ampliar as integrações com CRM e outros sistemas, criar skills reutilizáveis e validar cada novo conector com uma tarefa real antes de ampliar a autonomia.
+
+Para cada implantação, quero acompanhar qualidade das execuções, adoção e custo por tarefa, além de documentar e treinar a equipe para operar o agente. Essa é a direção do projeto: transformar uma execução demonstrável em uma operação que o cliente consiga acompanhar, manter e evoluir. As novas integrações e a operação com clientes são etapas futuras, distintas do fluxo já validado neste repositório.
+
 ## O que você pode acessar
 
 Disponibilizei o código-fonte, os testes, os perfis e skills dos agentes, a documentação e as evidências com dados fictícios. Você pode clonar o repositório e executar a demonstração localmente, conforme a licença [MIT](LICENSE).
