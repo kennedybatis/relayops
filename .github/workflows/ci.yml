@@ -1,0 +1,23 @@
+name: Quality gates
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s tests -v
+      - run: python -m relayops demo
+      - run: python -m relayops report
+      - name: Validate optional MCP integration
+        if: matrix.python == '3.12'
+        run: |
+          python -m pip install -r requirements-mcp.lock
+          python scripts/check_mcp.py

@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "relayops"
+version = "0.1.0"
+description = "Auditable commercial agent workflows with human approval boundaries"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+[project.optional-dependencies]
+mcp = ["mcp==1.12.4", "pydantic==2.11.7"]
+[tool.setuptools.packages.find]
+include = ["relayops*"]

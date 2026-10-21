@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RelayOps — Evidence before autonomy</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <aside>
+      <a class="brand" href="/">↗ relayops<span>AGENT OPERATIONS</span></a>
+      <div class="nav">◉ &nbsp; Visão da operação</div>
+      <p>01 / COMMERCIAL AGENT</p>
+      <div class="rail">
+        Escopo definido<br />↓<br />Processo executado<br />↓<br />Evidência
+        registrada<br />↓<br />Decisão humana
+      </div>
+      <small
+        >LOCAL SANDBOX<br />Somente dados fictícios.<br />Nenhuma mensagem é
+        enviada.</small
+      >
+    </aside>
+    <main>
+      <header>
+        <span class="eyebrow">IMPLEMENTATION LAB / 001</span
+        ><span class="online">● Ambiente local</span>
+      </header>
+      <section class="hero">
+        <div>
+          <h1>Autonomia com<br /><em>evidência.</em></h1>
+          <p>
+            Da entrada do lead à decisão humana.<br />Uma operação comercial que
+            você consegue inspecionar.
+          </p>
+        </div>
+        <button id="run">Executar demonstração ↗</button>
+      </section>
+      <div class="notice">
+        MODO DETERMINÍSTICO · SEM LLM ATIVO · SEM CHAVES · DADOS SINTÉTICOS
+      </div>
+      <div id="error" role="alert"></div>
+      <section id="metrics" class="metrics"></section>
+      <section class="panel">
+        <div class="section-title">
+          <h2>Execuções do agente</h2>
+          <span>REGRAS + CONSENTIMENTO + IDENTIDADE</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Contato</th>
+                <th>Decisão</th>
+                <th>Motivo verificável</th>
+                <th>Tempo do núcleo</th>
+              </tr>
+            </thead>
+            <tbody id="runs"></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="section-title">
+          <h2>Aprovações humanas</h2>
+          <span>PAYLOAD FIXO · OUTBOX LOCAL</span>
+        </div>
+        <p class="muted">
+          Aprovar libera o rascunho para uma outbox local. Não envia e-mail.
+        </p>
+        <div id="approvals" class="approvals"></div>
+      </section>
+      <footer>
+        <span>RELAYOPS / IMPLEMENTAÇÃO DE REFERÊNCIA</span
+        ><span id="audit">Auditoria aguardando execução</span>
+      </footer>
+    </main>
+  </body>
+</html>

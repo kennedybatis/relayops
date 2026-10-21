@@ -1,0 +1,26 @@
+test_advisor_never_exposes_tools (test_engine.ConnectorTests) ... ok
+test_advisor_rejects_arbitrary_action (test_engine.ConnectorTests) ... ok
+test_advisor_rejects_remote_endpoint (test_engine.ConnectorTests) ... ok
+test_sheets_raw_write_and_readback (test_engine.ConnectorTests) ... ok
+test_sheets_readback_failure (test_engine.ConnectorTests) ... ok
+test_approval_is_exactly_once (test_engine.EngineTests) ... ok
+test_business_scenarios (test_engine.EngineTests) ... ok
+test_campaign_boundaries (test_engine.EngineTests) ... ok
+test_changed_payload_is_rejected (test_engine.EngineTests) ... ok
+test_detects_modified_audit (test_engine.EngineTests) ... ok
+test_idempotency_after_restart (test_engine.EngineTests) ... ok
+test_injection_cannot_approve_or_send (test_engine.EngineTests) ... ok
+test_invalid_or_unknown_approval (test_engine.EngineTests) ... ok
+test_no_consent_never_creates_outreach (test_engine.EngineTests) ... ok
+test_rejection_cannot_be_overturned (test_engine.EngineTests) ... ok
+test_strict_validation (test_engine.EngineTests) ... ok
+test_cross_origin_write_rejected (test_http.HTTPTests) ... ok
+test_filesystem_not_exposed (test_http.HTTPTests) ... ok
+test_invalid_host_rejected (test_http.HTTPTests) ... ok
+test_invalid_json_does_not_write (test_http.HTTPTests) ... ok
+test_local_workflow (test_http.HTTPTests) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.443s
+
+OK
