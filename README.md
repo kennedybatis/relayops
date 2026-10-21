@@ -19,7 +19,7 @@ Python · SQLite · Agent Skills · MCP · Google Sheets · Human-in-the-loop
 
 Leads chegam por diferentes canais, informações ficam incompletas e o comercial repete tarefas sem uma trilha clara de decisões. Colocar um chatbot nessa operação não resolve identidade, consentimento, integração e responsabilidade por ações.
 
-RelayOps demonstra o caminho **kickoff → processo → skill → execução → aprovação → evidência → handoff**, usando uma campanha imobiliária fictícia. É um projeto de portfólio desenvolvido por Kennedy Batis com assistência de agentes de código, não um sistema implantado na UPX ou um caso de produção de cliente.
+Desenvolvi o RelayOps para demonstrar como transformo um processo comercial em um fluxo executável com agentes de IA: **kickoff → processo → skill → execução → aprovação → evidência → handoff**. Escolhi uma campanha imobiliária como cenário pela minha experiência no setor e usei dados fictícios para permitir uma avaliação pública e reproduzível, sem expor clientes.
 
 ## Execute em 2 minutos
 
@@ -133,10 +133,20 @@ O advisor envia o lead sintético para o endpoint local `/api/chat`. Carrega per
 4. Aprove e rejeite rascunhos, reinicie a aplicação e confira a persistência.
 5. Leia [decisões técnicas](docs/decisions.md), [limites de segurança](SECURITY.md) e [roteiro de apresentação](docs/demo-script.md).
 
-## Transparência de construção
+## Como desenvolvi o projeto
 
-Kennedy definiu a intenção de negócio e o contexto comercial; o código, os testes e a documentação deste demonstrador foram produzidos com assistência do Codex. O roteiro de apresentação acompanha as decisões técnicas e a validação do fluxo. Não atribuímos resultados reais de clientes ou tempo de produção a este projeto.
+Meu ponto de partida foi o processo comercial: quais informações o time precisa, o que o agente pode executar e quando uma decisão deve voltar para uma pessoa. A partir desse escopo, estruturei o RelayOps com ferramentas de execução delimitadas, critérios de qualificação e conferência dos registros gravados.
 
-**Status:** referência demonstrável, local e de usuário único. Para produção faltam autenticação/RBAC, segregação por cliente, gestão de segredos, política de retenção, operação de credenciais, telemetria e validação com usuários reais. Não há SLA, certificação, vínculo com UPX nem promessa de retorno.
+Usei o Codex na implementação do código, na construção dos testes e na documentação. O repositório reúne o resultado desse desenvolvimento assistido: arquitetura, regras de negócio, integrações, testes e evidências de execução. No [roteiro de apresentação](docs/demo-script.md), explico as decisões técnicas e como conferir o funcionamento do fluxo.
 
-Licença [MIT](LICENSE).
+Na validação com Ollama e Google Sheets, o agente revisou três leads, registrou as avaliações e conferiu cada gravação. Incluí um orçamento conflitante e uma tentativa de alterar as instruções pelo conteúdo do lead para testar os limites do fluxo. Os resultados e as limitações observadas estão nas [evidências](docs/evidence.md).
+
+## O que você pode acessar
+
+Disponibilizei o código-fonte, os testes, os perfis e skills dos agentes, a documentação e as evidências com dados fictícios. Você pode clonar o repositório e executar a demonstração localmente, conforme a licença [MIT](LICENSE).
+
+A interface roda no computador de quem executa o projeto; este repositório não hospeda uma aplicação pública. Contas, credenciais, modelos locais e dados de execução privados não fazem parte dos arquivos publicados. Para executar integrações na sua própria instalação, configure seus acessos conforme a [documentação](docs/goal-agent.md).
+
+## Próximos passos para produção
+
+A versão atual foi construída para execução local, com um único usuário. Para levá-la a uma operação com clientes, minha próxima etapa seria implementar autenticação e permissões por função, isolamento por cliente, gestão de segredos e ciclo de credenciais, retenção de dados e telemetria. Depois, validar adoção e qualidade com usuários reais. Detalho os limites atuais em [Segurança](SECURITY.md).

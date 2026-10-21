@@ -1,6 +1,6 @@
 # RelayOps — evidence before autonomy
 
-A local implementation reference for a commercial agent workflow: validate synthetic leads, apply explicit campaign rules, deduplicate contacts, stage fixed-payload human approvals and retain verifiable execution evidence.
+I developed RelayOps as a local reference for a commercial agent workflow: validate synthetic leads, apply explicit campaign rules, deduplicate contacts, stage fixed-payload human approvals and retain verifiable execution evidence.
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -12,7 +12,9 @@ Visit http://127.0.0.1:8765. Core requires Python 3.9+ and no third-party packag
 
 The default demonstration is deterministic. The optional Ollama advisor generates summaries without tool access; Google Sheets export uses explicit operator authorization and read-back. Approvals only release a local outbox, never real email. SQLite persists identity, decisions and hash-linked events.
 
-Built as a portfolio demonstrator by Kennedy Batis with coding-agent assistance. This is not a claimed customer deployment or a UPX product. Live Google and model execution require a separately configured environment. Authentication, tenant isolation, immutable logs and production credential lifecycle are outside the current scope.
+I used Codex to assist with implementation, tests and documentation. I chose a fictional real estate campaign to connect the demonstration to my commercial background and make the workflow publicly reproducible without exposing customer data. The repository includes source code, tests, profiles, skills and execution evidence with synthetic data under the MIT license. It does not provide access to my accounts, credentials or local environment.
+
+The current version runs locally for one user. My next steps toward production would be role-based authentication, tenant isolation, secrets and credential lifecycle management, retention policies, telemetry and validation with real users. Live integrations require separately configured access; current boundaries are documented in the security guide.
 
 See [architecture](architecture.md), [operational handoff](handoff.md), [decisions](decisions.md), [evidence](evidence.md) and [security](../SECURITY.md).
 
